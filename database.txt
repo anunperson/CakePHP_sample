@@ -1,0 +1,20 @@
+CREATE DATABASE mytestdb;
+CREATE USER cakebaker IDENTIFIED BY '***';
+GRANT ALL ON mytestdb.* TO cakebaker;
+USE DATABSE mytestdb;
+
+CREATE TABLE users(
+    id int primary key auto_increment,
+    name varchar(255) not null,
+    data1 varchar(255),
+    data2 varchar(255),
+    created datetime,
+    modified datetime
+);
+
+INSERT INTO users (name, data1, data2, created, modified)
+    VALUES ( "Tanaka", "test data", "test data", NOW(), NOW() );
+INSERT INTO users (name, data1, data2, created, modified)
+    VALUES ( "Suzuki", "test data", "test data", NOW(), NOW() );
+
+
