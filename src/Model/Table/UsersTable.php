@@ -21,11 +21,13 @@ class UsersTable extends Table
                     'rule' => ['lengthBetween', 2, 30],
                     'message' => '名前は2文字以上、30文字までです',
                 ]])
+            ->allowEmptyDateTime('data1')
             ->add('data1', [
                 'length' => [
                     'rule' => ['maxLength', 30],
                     'message' => 'data1は30文字までです',
                 ]])
+           ->allowEmptyDateTime('data2')
             ->add('data2', [
                 'length' => [
                     'rule' => ['maxLength', 30],

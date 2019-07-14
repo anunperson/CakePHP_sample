@@ -27,31 +27,23 @@ class UsersController extends AppController
     
     public function add()
     {
-        $validator = new Validator();
-
-        
-        
-        
-        
         $new_user = $this->Users->newEntity();
         
+        //POSTが来たら登録してリストに戻る or エラー表示つけて戻す
         if ($this->request->is('post')) {
             $new_user = $this->Users->patchEntity($new_user, $this->request->getData());
             
             if ($this->Users->save($new_user)) {
                 $this->Flash->success(__('ユーザー追加成功')); //日本語テスト
-                    // $this->Flash->render() で表示
                 return $this->redirect(['action' => 'index']);
              }
              $this->Flash->error(__('Unable to add new user.'));
         }
         
         
-        //POSTが来てない場合
-        //$this->set('new_user', $new_user);
+        //POSTが来てない場合は登録画面を表示
         $this->set(compact('new_user'));
         
-
         
     }
 }
