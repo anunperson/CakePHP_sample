@@ -14,12 +14,9 @@ echo $this->Form->input( 'name', ['label' => ['text' => '名前 (2～30文字)']
 echo $this->Form->input( 'data1', ['label' => ['text' => 'データ2 (任意)']] );
 echo $this->Form->input( 'data2', ['label' => ['text' => 'データ3 (任意)']] );
 echo $this->Form->button(__('登録する'), ['class' => 'btn btn-primary']);
-?>
-
- <a class="btn btn-light" role="button" href="/users/">もどる</a> 
-
-<?php
-echo $this->Form->end()
+echo $this->Html->link('もどる', ['controller' => 'Users', 'action' => 'index'],
+                                    ["class"=>"btn btn-light", "role"=>"button" ]);
+echo $this->Form->end();
 ?>
 
 </div>

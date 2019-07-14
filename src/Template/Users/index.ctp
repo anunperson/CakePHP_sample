@@ -41,7 +41,9 @@ $this->assign('title', '一覧')
 </table>
 
 <p>
-    <a class="btn btn-primary" role="button" href="/users/add">データ追加へ</a> 
+    <?= $this->Html->link('データ追加へ', ['controller' => 'Users', 'action' => 'add'],
+                            ["class"=>"btn btn-primary", "role"=>"button" ]) ?>
+
 </p>
 
 </div>
