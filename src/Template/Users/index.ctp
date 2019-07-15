@@ -22,16 +22,16 @@ $this->assign('title', '一覧')
     <?php foreach ($users as $user): ?>
     <tr>
         <td class="col-xs-4" >
-            <?= $user->name ?>
+            <?= h($user->name) ?>
         </td>
         <td class="col-xs-2">
-            <?= $user->data1 ?>
+            <?= h($user->data1) ?>
         </td>
         <td class="col-xs-2">
-            <?= $user->data2 ?>
+            <?= h($user->data2) ?>
         </td>
         <td class="col-xs-2">
-            <?= $user->created ?>
+            <?= h($user->created) ?>
         </td>
     </tr>
     <?php endforeach; ?>
